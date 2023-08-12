@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-dropzone": "^14.2.3",
     "react-scripts": "5.0.1",
     "scrypt-ts": "^1.3.1",
     "typescript": "^4.9.5",
@@ -23,7 +24,7 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "pretest": "npx scrypt-cli compile",
-    "build:contract": "npx scrypt-cli compile",
+    "build:contract": "npx scrypt-cli@latest compile",
     "deploy:contract": "npx ts-node ./scripts/deploy.ts",
     "verify:contract": "npx scrypt-cli verify $(cat .scriptHash) ./src/contracts/onchainImg.ts",
     "genprivkey": "npx ts-node ./scripts/privateKey.ts"

@@ -1,7 +1,7 @@
 import { writeFileSync } from 'fs'
 import { OnchainImg } from '../src/contracts/onchainImg'
 import { privateKey } from './privateKey'
-import { bsv, TestWallet, DefaultProvider, sha256 } from 'scrypt-ts'
+import { bsv, TestWallet, DefaultProvider, sha256, PubKey } from 'scrypt-ts'
 
 function getScriptHash(scriptPubKeyHex: string) {
     const res = sha256(scriptPubKeyHex).match(/.{2}/g)
@@ -21,12 +21,9 @@ async function main() {
     }))
 
     // TODO: Adjust the amount of satoshis locked in the smart contract:
-    const amount = 100
+    const amount = 1
 
-    const instance = new OnchainImg(
-        // TODO: Pass constructor parameter values.
-        0n
-    )
+    const instance = new OnchainImg(privateKey.toPublicKey().toHex() as PubKey, '')
 
     // Connect to a signer.
     await instance.connect(signer)
