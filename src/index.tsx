@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { Scrypt, bsv } from 'scrypt-ts'
 
 Scrypt.init({
-  apiKey: 'testnet_2hw7JLTPJOiWkMXsIq1G8MQvurD1FtdobdtibxThQ4DfDM7iy',
+  apiKey: 'YOUR_SCRYPT_API_KEY_HERE',
   network: bsv.Networks.testnet,
 })
 
